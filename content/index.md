@@ -1,9 +1,5 @@
 ---
-title: Welcome to XalNet Docs
+title: Welcome to Quartz
 ---
 
-Welcome to XalNet Docs.
-
-# test
-
-## test
+This is a test
