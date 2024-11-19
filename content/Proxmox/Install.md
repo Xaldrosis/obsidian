@@ -3,4 +3,41 @@ title: Install
 draft: false
 tags:
 ---
- 
+# Download
+
+Download the latest iso version from [Downloads - Proxmox Virtual Environment](https://www.proxmox.com/en/downloads/proxmox-virtual-environment)
+
+Use your favorite bootable usb creator and create a bootable usb from this iso.
+
+# Installation
+
+Insert the USB drive into the host and boot up the installer.
+Due to not having a capture card there will be no screenshots provided for the setup.
+
+Select Install Proxmox VE (Graphical).
+
+Select I agree in the bottom right.
+
+At the bottom center select the target drive you wish to install Proxmox on. In case you are using a single drive the default file system will be EXT4. In case you want to use the ZFS features on a single drive you can select zfs (RAID0) in the options. For my installation I will be using zfs (RAID1) on my SATA SSDs. In options after selecting zfs (RAID1), select "Deselect All" in the bottom right. Select the SATA SSDs as Harddisk 0 and 1.
+
+Select Next in the bottom right.
+
+Fill in your location and timezone.
+Country: Belgium
+Timezone: Europe/Brussels
+Keyboard layout: U.S. English
+
+Select Next in the bottom right.
+
+Enter your root password and your e-mail address. This e-mail address will be attached to the root user for alerting.
+
+Select Next in the bottom right.
+
+Enter the FQDN of your host and the static IP address.
+
+Hostname: hv01.home.xalnet.cc
+
+Select Next in the bottom right.
+
+Check the summary and select Install in the bottom right.
+Your host will reboot after the installation has been completed.
