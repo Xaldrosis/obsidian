@@ -7,16 +7,15 @@ tags:
 ```
 volumes:
  unifidb:
-  external: true
+ unifidbconfig:
  unifi:
-  external: true
 services:
  unifi-db:
   image: mongo:4
   container_name: unifi-db
-  user: "3000"
   volumes:
-    - unifidb:/data/db:nocopy
+    - unifidb:/data/db
+    - unifidbconfig:/data/configdb
   environment:
     - TZ=Europe/Brussels
   restart: unless-stopped
@@ -24,8 +23,6 @@ services:
   image: linuxserver/unifi-network-application:latest
   container_name: unifi-network-application
   environment:
-    - PUID=3000
-    - PGID=3000
     - TZ=Europe/Brussels
     - MONGO_USER=unifi
     - MONGO_PASS=
@@ -33,7 +30,7 @@ services:
     - MONGO_PORT=27017
     - MONGO_DBNAME=unifi
   volumes:
-    - unifi:/config:nocopy
+    - unifi:/config
   ports:
     - 8443:8443
     - 3478:3478/udp

@@ -7,11 +7,8 @@ tags:
 ```
 volumes:
  gluetun:
-  external: true
  qbittorrent:
-  external: true
  prowlarr:
-  external: true
  downloads:
   external: true
 services:
@@ -23,10 +20,8 @@ services:
     devices:
       - /dev/net/tun:/dev/net/tun
     volumes:
-      - gluetun:/gluetun:nocopy
+      - gluetun:/gluetun
     environment:
-      - PUID=3000
-      - PGID=3000
       - TZ=Europe/Brussels
       - LOG_LEVEL=debug
       - VPN_SERVICE_PROVIDER=custom
@@ -52,8 +47,8 @@ services:
       - TZ=Europe/Brussels
       - WEBUI_PORT=8089
     volumes:
-      - qbittorrent:/config:nocopy
-      - downloads:/downloads:nocopy
+      - qbittorrent:/config
+      - downloads:/downloads
     network_mode: "service:gluetun"
     restart: unless-stopped
   flaresolverr:
@@ -67,11 +62,9 @@ services:
     image: linuxserver/prowlarr:latest
     container_name: prowlarr
     environment:
-      - PUID=3000
-      - PGID=3000
       - TZ=Europe/Brussels
     volumes:
-      - prowlarr:/config:nocopy
+      - prowlarr:/config
     network_mode: "service:gluetun"
     restart: unless-stopped
 ```

@@ -7,19 +7,15 @@ tags:
 ```
 volumes:
  bazarr:
-  external: true
  movies:
   external: true
  tv:
   external: true
  radarr:
-  external: true
  downloads:
   external: true
  sonarr:
-  external: true
  jellyseerr:
-  external: true
 services:
  bazarr:
   container_name: bazarr
@@ -28,9 +24,9 @@ services:
   ports:
     - 6767:6767
   volumes:
-    - bazarr:/config:nocopy
-    - movies:/movies:nocopy
-    - tv:/tv:nocopy
+    - bazarr:/config
+    - movies:/movies
+    - tv:/tv
   environment:
     - PUID=3000
     - PGID=3000
@@ -44,9 +40,9 @@ services:
   ports:
     - 7878:7878
   volumes:
-    - radarr:/config:nocopy
-    - downloads:/downloads:nocopy
-    - movies:/movies:nocopy
+    - radarr:/config
+    - downloads:/downloads
+    - movies:/movies
   environment:
     - PUID=3000
     - PGID=3000
@@ -59,9 +55,9 @@ services:
   ports:
     - 8989:8989
   volumes:
-    - sonarr:/config:nocopy
-    - downloads:/downloads:nocopy
-    - tv:/tv:nocopy
+    - sonarr:/config
+    - downloads:/downloads
+    - tv:/tv
   environment:
     - PUID=3000
     - PGID=3000
@@ -74,10 +70,8 @@ services:
   ports:
     - 5055:5055
   volumes:
-    - jellyseerr:/app/config:nocopy
+    - jellyseerr:/app/config
   environment:
-    - PUID=3000
-    - PGID=3000
     - TZ=Europe/Brussels
   restart: unless-stopped
 ```
