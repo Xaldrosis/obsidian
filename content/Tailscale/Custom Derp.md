@@ -57,3 +57,4 @@ systemctl enable --now derper
 sudo systemctl status derper
 ```
 
+Port forward TCP 443 and UDP 3478.
