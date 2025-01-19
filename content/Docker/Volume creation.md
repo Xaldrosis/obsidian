@@ -25,4 +25,11 @@ docker volume create \
     --opt o=addr=172.19.90.3,rw,nfsvers=4 \
     --opt device=:/mnt/data/proxmox/downloads \
     downloads
+
+docker volume create \
+    --driver local \
+    --opt type=nfs \
+    --opt o=addr=172.19.90.3,rw,nfsvers=4 \
+    --opt device=:/mnt/data/proxmox/roms \
+    roms
 ```

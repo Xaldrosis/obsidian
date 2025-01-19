@@ -8,9 +8,10 @@ volumes:
   mysql_data:
   romm_resources:
   romm_redis_data:
-  romm_library:
   romm_assets:
   romm_config:
+  roms:
+   external: true
 
 services:
   romm:
@@ -18,6 +19,9 @@ services:
     container_name: romm
     restart: unless-stopped
     environment:
+      - PUID=3000
+      - PGID=3000
+      - TZ=Europe/Brussels
       - DB_HOST=romm-db
       - DB_NAME=romm # Should match MARIADB_DATABASE in mariadb
       - DB_USER=romm-user # Should match MARIADB_USER in mariadb
@@ -30,7 +34,7 @@ services:
     volumes:
       - romm_resources:/romm/resources # Resources fetched from IGDB (covers, screenshots, etc.)
       - romm_redis_data:/redis-data # Cached data for background tasks
-      - romm_library:/romm/library # Your game library. Check https://github.com/rommapp/romm?tab=readme-ov-file#folder-structure for more details.
+      - roms:/romm/library # Your game library. Check https://github.com/rommapp/romm?tab=readme-ov-file#folder-structure for more details.
       - romm_assets:/romm/assets # Uploaded saves, states, etc.
       - romm_config:/romm/config # Path where config.yml is stored
     ports:
