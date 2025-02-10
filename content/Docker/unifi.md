@@ -34,6 +34,7 @@ services:
   ports:
     - 8443:8443
     - 3478:3478/udp
+    - 5514:5514/udp
     - 10001:10001/udp
     - 8080:8080
   restart: unless-stopped
