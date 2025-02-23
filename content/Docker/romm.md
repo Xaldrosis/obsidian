@@ -38,7 +38,7 @@ services:
       - romm_assets:/romm/assets # Uploaded saves, states, etc.
       - romm_config:/romm/config # Path where config.yml is stored
     ports:
-      - 8081:8080
+      - 8180:8080
     depends_on:
       romm-db:
         condition: service_healthy
