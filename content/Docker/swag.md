@@ -15,12 +15,12 @@ services:
       - NET_ADMIN
     environment:
       - TZ=Europe/Brussels
-      - URL=home.xalnet.cc
+      - URL=xalnet.cc
       - VALIDATION=dns
-      - SUBDOMAINS=wildcard
+      - SUBDOMAINS=unifi-network.home,portainer.home,sonarr.home,radarr.home,qbittorrent.home,bazarr.home,prowlarr.home,jellyfin.home,jellyseerr.home,pihole.home,tdarr.home,gamepanel.home,romm.home,readarr.home,calibre.home,calibre-web,netbox.home
       - CERTPROVIDER=letsencrypt
       - DNSPLUGIN=cloudflare
-      - EMAIL=
+      - EMAIL=tanzilsteven@hotmail.com
       - DOCKER_MODS=linuxserver/mods:swag-auto-reload
     volumes:
       - swag:/config
