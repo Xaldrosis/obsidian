@@ -4,6 +4,4 @@ title: Welcome to XalNet Docs
 
 Welcome to XalNet Docs.
 
-# test
-
-## test
+This is a Github page for all my homelab documentation.
