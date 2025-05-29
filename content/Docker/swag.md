@@ -17,11 +17,12 @@ services:
       - TZ=Europe/Brussels
       - URL=xalnet.cc
       - VALIDATION=dns
-      - SUBDOMAINS=unifi-network.home,portainer.home,sonarr.home,radarr.home,qbittorrent.home,bazarr.home,prowlarr.home,jellyfin.home,jellyseerr.home,pihole.home,tdarr.home,gamepanel.home,romm.home,readarr.home,calibre.home,calibre-web,netbox.home
+      - SUBDOMAINS=unifi-network.home,portainer.home,sonarr.home,radarr.home,qbittorrent.home,bazarr.home,prowlarr.home,jellyfin.home,jellyseerr.home,pihole.home,tdarr.home,gamepanel.home,romm.home,readarr.home,calibre.home,calibre-web,netbox.home,paperless.home
       - CERTPROVIDER=letsencrypt
       - DNSPLUGIN=cloudflare
       - EMAIL=tanzilsteven@hotmail.com
       - DOCKER_MODS=linuxserver/mods:swag-auto-reload
+      - PROPAGATION=30
     volumes:
       - swag:/config
     ports:
