@@ -24,3 +24,15 @@ DATA SSD: Kingston FURY Renegade 1TB & Kingston FURY Renegade 1TB w/ Heatsink
 DATA HDD: 2x Toshiba MG10 20TB
 
 PCI Expansion: MZHOU PCIe SATA X4 Card 6 Port Expansion Card (PCIE Passthrough as OS drives are on the motherboard SATA controller)
+
+# hv02.home.xalnet.cc
+
+AOOSTAR Mini PC Desktop Computer N1 PRO
+
+CPU: N150
+
+Memory: 12GB LPDDR5
+
+SSD: 512GB
+
+Network: 2x 2.5gbit
