@@ -17,7 +17,8 @@ services:
       - TZ=Europe/Brussels
       - URL=xalnet.cc
       - VALIDATION=dns
-      - SUBDOMAINS=unifi-network.home,portainer.home,sonarr.home,radarr.home,qbittorrent.home,bazarr.home,prowlarr.home,jellyfin.home,jellyseerr.home,pihole.home,tdarr.home,gamepanel.home,romm.home,readarr.home,calibre.home,calibre-web,netbox.home,paperless.home,huntarr.home
+      - SUBDOMAINS=wildcard
+      - EXTRA_DOMAINS=*.home.xalnet.cc
       - CERTPROVIDER=letsencrypt
       - DNSPLUGIN=cloudflare
       - EMAIL=tanzilsteven@hotmail.com
