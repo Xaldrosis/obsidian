@@ -75,14 +75,4 @@ services:
   environment:
     - TZ=Europe/Brussels
   restart: unless-stopped
- huntarr:
-  container_name: huntarr
-  hostname: huntarr
-  image: huntarr/huntarr:latest
-  ports:
-    - 9705:9705
-  volumes:
-    - huntarr:/config
-  environment:
-    - TZ=Europe/Brussels
 ```
